@@ -1,0 +1,33 @@
+# Shopify App Configuration
+
+name = "Maisoonmaiav2"
+client_id = "34134817333bcdcc3e43d644d8c8dc44" # Shopify Partner Dashboard'dan alınacak
+application_url = "https://api2.gustoapp.net"
+embedded = true
+
+[access_scopes]
+scopes = "write_products,write_orders,read_customers,write_customers,write_draft_orders,read_draft_orders,write_marketing_events,read_marketing_events,read_checkouts"
+
+[auth]
+redirect_urls = [
+  "https://api2.gustoapp.net/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2026-01"
+
+[[webhooks.subscriptions]]
+topics = ["orders/create"]
+uri = "/api/webhooks/orders/create"
+
+[[webhooks.subscriptions]]
+topics = ["app/uninstalled"]
+uri = "/api/webhooks/app/uninstalled"
+
+[app_proxy]
+url = "https://api2.gustoapp.net"
+subpath = "cod"
+prefix = "apps"
+
+[pos]
+embedded = false
