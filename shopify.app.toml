@@ -2,7 +2,7 @@
 
 name = "Maisoonmaiav2"
 client_id = "34134817333bcdcc3e43d644d8c8dc44" # Shopify Partner Dashboard'dan alınacak
-application_url = "https://api2.gustoapp.net"
+application_url = "https://mais.gustoapp.net"
 embedded = true
 
 [access_scopes]
@@ -10,7 +10,7 @@ scopes = "write_products,write_orders,read_customers,write_customers,write_draft
 
 [auth]
 redirect_urls = [
-  "https://api2.gustoapp.net/api/auth/callback"
+  "https://mais.gustoapp.net/api/auth/callback"
 ]
 
 [webhooks]
@@ -25,7 +25,7 @@ topics = ["app/uninstalled"]
 uri = "/api/webhooks/app/uninstalled"
 
 [app_proxy]
-url = "https://api2.gustoapp.net"
+url = "https://mais.gustoapp.net"
 subpath = "cod"
 prefix = "apps"
 
