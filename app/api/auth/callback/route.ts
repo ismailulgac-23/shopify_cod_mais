@@ -23,8 +23,8 @@ export async function GET(request: NextRequest) {
     // Access token al
     const accessTokenUrl = `https://${shop}/admin/oauth/access_token`;
     const accessTokenData = {
-      client_id: getEnv(shop).key,
-      client_secret: getEnv(shop).secret,
+      client_id: process.env.SHOPIFY_API_KEY,
+      client_secret: process.env.SHOPIFY_API_SECRET,
       code,
     };
 
@@ -97,7 +97,7 @@ export async function GET(request: NextRequest) {
     console.log("📍 Host:", host);
 
     // Shopify Admin embedded app URL'i
-    const embeddedAppUrl = `https://${shop}/admin/apps/${getEnv(shop).key}`;
+    const embeddedAppUrl = `https://${shop}/admin/apps/${process.env.SHOPIFY_API_KEY}`;
 
     // HTML ile Shopify Admin'e yönlendir
     const html = `
